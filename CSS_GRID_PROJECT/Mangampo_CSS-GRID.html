@@ -1,0 +1,108 @@
+
+<!--
+    Hello!, Arjon here this is my output for the project in prelims in WebSys2.
+    Please zoom out the webpage by 67% for easier viewing. this is made using
+    CSS Grid, and a bit of CSS Flexbox for the header
+
+    I only made it simple so it does not inconvinience both the viewer and
+    the designer,
+
+    I will randomly put my name as comment across the whole code as a watermark
+    to prevent copying.
+
+    This is Arjon Mangampo of BSIT-2
+    Signing off...
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS GRID<!--Arjon Mangampo19--></title>
+</head>
+<style>
+    center{
+        align-items: center;
+    }
+    button {
+        background-color: #27fbde;
+        border: none;
+        color: rgb(0, 0, 0);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+    .grid-container {
+         display: grid;
+         grid-template-areas:
+          'header header header header'
+          'main main main main';
+         gap: 10px;
+         background-color: rgba(0, 251, 255, 0.495);
+         padding: 10px;
+         column-gap: 20px;
+         row-gap: 30px;
+
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+        margin-left: 10px; margin-right: 10px;
+        background-image: image(s1.jpg);
+    }
+    .grid-container > div {
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 12px;
+        font-size: 30px;
+    }
+    body{
+        background-color: black;
+    }
+    header,p{
+        color: aqua;
+    }
+</style>
+<body>
+    <div class="container"><center><!--Arjon Mangampo1-->
+        <div><header style="font-size: 50px; font-family: system-ui;">PROJECT IN WEBSYS2</header><!--Arjon Mangampo2-->
+            <p style="font-family: system-ui;">CSS GRID by Arjon Mangampo of BSIT-2</p>
+        </div></center><!--Arjon Mangampo3-->
+    </div>
+    </br><!--Arjon Mangampo4-->
+
+    <div class="grid-container"><!--Arjon Mangampo5-->
+        <div class="grid-item"><img src="s1.jpg"></br><button>Click me!</button></div> <!--Arjon Mangampo6-->
+        <div class="grid-item"><img src="s2.jpg"></br><button>Click me!</button></div>
+        <div class="grid-item"><img src="s3.jpg"></br><button>Click me!</button></div>
+        <div class="grid-item"><img src="s4.jpg"></br><button>Click me!</button></div>
+        <!--Arjon Mangampo7-->
+        <div class="grid-item"><img src="s5.jpg"></br><button>Click me!</button></div>
+        <div class="grid-item"><img src="s6.jpg"></br><!--Arjon Mangampo8--><button>Click me!</button></div>
+        <div class="grid-item"><img src="s7.jpg"></br><button>Click me!</button></div><!--Arjon Mangampo9-->
+        <div class="grid-item"><img src="s8.jpg"></br><button>Click me!</button></div>
+        <!--Arjon Mangampo10-->
+        <div class="grid-item"><img src="s9.jpg"></br><button>Click me!</button></div>
+        <div class="grid-item"><img src="s10.jpg"></br><button>Click me!</button></div> <!--Arjon Mangampo11-->
+        <div class="grid-item"><img src="s11.jpg"></br><button>Click me!</button></div>
+        <div class="grid-item"><img src="s12.jpg"></br><button>Click me!</button></div>
+        <!--Arjon Mangampo13-->
+        <div class="grid-item"><img src="s13.jpg"></br><button>Click me!</button></div>
+        <div class="grid-item"><img src="s14.jpg"></br><button>Click me!</button></div>
+        <div class="grid-item"><img src="s15.jpg"></br><!--Arjon Mangampo14--><button>Click me!</button></div>
+        <div class="grid-item"><img src="s16.jpg"></br><button>Click me!</button></div>
+        
+        <div class="grid-item"><!--Arjon Mangampo15--><img src="s17.jpg"></br><button>Click me!</button></div>
+        <div class="grid-item"><img src="s18.jpg"></br><button>Click me!</button></div>
+        <div class="grid-item"><img src="s19.jpg"></br><button>Click me!</button></div><!--Arjon Mangampo16-->
+        <div class="grid-item"><img src="s20.jpg"></br><button>Click me!</button></div>
+        
+    </div>
+</body>
+<!--Arjon Mangampo17-->
+</html>
+
+<!--Arjon Mangampo18-->
