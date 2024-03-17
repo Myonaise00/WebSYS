@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <!-- ignore these bunch -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+       <script>
+        function calculateAge() {
+          var birthdate = document.getElementById('birthdate').value;
+          var birthdateParts = birthdate.split('-');
+          var birthday = new Date(birthdateParts[0], birthdateParts[1] - 1, birthdateParts[2]);
+          var differenceInMS = Date.now() - birthday.getTime();
+          var ageDate = new Date(differenceInMS);
+          var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+          document.getElementById('age').value = age;
+        }
+        </script>
+    <script>
+              function validatePasswordMatch() {
+                     var password = document.getElementById("password").value;
+                     var confirmPassword = document.getElementById("confirm-password").value;
+                     if (password != confirmPassword) {
+                            alert("Passwords do not match.");
+                            return false;
+                     }
+                     return true;
+              }
+       </script>
+    <script type="text/javascript">
+        var frm = $('#contactForm1');
+    
+        frm.submit(function (e) {
+    
+            e.preventDefault();
+    
+            $.ajax({
+                type: frm.attr('method'),
+                url: frm.attr('action'),
+                data: frm.serialize(),
+                success: function (data) {
+                    console.log('Submission was successful.');
+                    console.log(data);
+                },
+                error: function (data) {
+                    console.log('An error occurred.');
+                    console.log(data);
+                },
+            });
+        });
+    </script>
+</head>
+<style>
+    input[type=text], input[type=password], input[type=email] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+    }
+    button{
+        size: 30px;
+        border-radius: 10px;
+        border: 15px;
+    }
+    body{
+        color: black;
+        background-color: lightblue;
+        font-family: arial;
+    }
+    .container{
+        display: flex;
+        border: 3px solid #ccc;
+        justify-content: center;
+        background-color: white;
+        border-color: darkgray;
+        border-radius: 5px;
+        margin: 10px;
+        flex-grow: 2;
+        gap: 50px;
+
+    }
+    .center{
+        justify-content: center;
+    }
+</style>
+<body>
+    <center><h2 style="size: 20px;">REGISTRATION FORM</h2></center>
+    <br>
+    <div class="container">
+        <center>
+    <form target="_self" method="post">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br>
+        <br>
+
+        <label for="middlename">Middle Name:</label>
+        <input type="text" id="middlename" name="middlename" required><br>
+        <br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br>
+        <br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br>
+        <br>
+
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate" required onchange="calculateAge()">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" readonly><br>
+        <br>
+
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <br>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required><br>
+        <br>
+
+        <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
+              <br>
+              <br>
+
+              <label for="confirm-password">Confirm Password:</label>
+              <input type="password" id="confirm-password" name="confirm-password" required>
+              <br>
+              <br>
+</div>
+</center>
+
+        <center><input type="submit" value="Register"> <input type="reset" value="Clear Form"></center>
+    </form>
+
+</body>
+</html>
